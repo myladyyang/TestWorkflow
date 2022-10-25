@@ -36,7 +36,10 @@ jobs:
     steps:
       - name: Checkout repository and build go binary
         uses: actions/checkout@v3
-      - uses: cedrickring/golang-action@1.6.0
+
+
+      - name: build go binary
+        run: make build
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
