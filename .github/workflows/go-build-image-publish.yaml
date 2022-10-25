@@ -12,6 +12,8 @@ on:
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispath:
+    branches: ["luffy_dev"]
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -34,6 +36,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: build go binary
+      - uses: cedrickring/golang-action@1.6.0
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
