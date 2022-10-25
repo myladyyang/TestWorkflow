@@ -34,10 +34,8 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository and build go binary
         uses: actions/checkout@v3
-
-      - name: build go binary
       - uses: cedrickring/golang-action@1.6.0
 
       # Install the cosign tool except on PR
